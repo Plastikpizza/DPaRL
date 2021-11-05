@@ -3,8 +3,8 @@ from functools import lru_cache
 from math import e, pow
 from sys import setrecursionlimit, maxsize
 
-# we define an interval to be the range of numbers from start to (and including)
-# end. Notice: python's range does not include the upper bound.
+# we define an interval to be the range of numbers from start to (and 
+# including) end. Notice: python's range does not include the upper bound.
 interval = lambda start, end : range(start, end+1)
 
 # the constants from the assignment document:

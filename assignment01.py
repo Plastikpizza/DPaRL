@@ -17,7 +17,7 @@ T = 600
 
 # in the slides, all indices start at 1 while in python indices are 0-based.
 # To be able to still use the notation/version on the slides, we use the
-# "functions" below to effectively make our lists/n-tuple indices appear to
+# "functions" below to effectively make our list indices appear to
 # start at 1.
 f = lambda i : [  500,   300,    200][i-1]
 μ = lambda i : [0.001, 0.015,   0.05][i-1]
@@ -46,8 +46,9 @@ if __name__ == "__main__":
 
     # we build the V-table in the following part. 
     # values : (time, state) -> V-value
-    values = {}
-    for x in range(1, 101):
-        for t in range(1, 601):
-            values[(t, x)] = V(t,x)
-    print(V(1, C))
+    vTable = {}
+    for x in interval(1, 100):
+        for t in interval(1, 600):
+            vTable[(t, x)] = V(t,x)
+    
+    print("Task 1) ${:.2f}".format(vTable.get((1, C))))
